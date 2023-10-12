@@ -1,3 +1,6 @@
+*, *::before, *::after {
+  outline: 1px red solid
+}
 /* GENERAL */
 * {
     margin: 0;
@@ -8,6 +11,7 @@
 body {
     font-family: Sanchez;
     background-color: white;
+    color: black;
 }
 
 h1 {
@@ -20,13 +24,17 @@ h2 {
     font-weight: normal;
 }
 
+a {
+    color: #c4c5c5;
+}
+
 /* HEADER */
 
 header {
-    background-color: #127475;
-    color: white;
+    background-color: white;
     padding: 20px;
     text-align: center;
+    border-bottom: 1px grey solid;
 }
 
 nav ul {
@@ -36,37 +44,58 @@ nav ul {
 }
 
 .nav_btn {
-    color: white;
+    color: black;
     text-decoration: none;
     padding: 5px;
 }
 
 .nav_btn:hover, .nav_btn:active {
-    border: 1px solid white;
+    border: 1px solid black;
     border-radius: 7px;
+}
+
+.logo {
+    max-width: 100%;
 }
 
 /* FOOTER */
 
 footer {
-    background-color: #127475;
+    background-color: #2A2825;
     color: white;
     padding: 10px 0;
     text-align: center;
 }
 
+.accueil {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
 
 /* SECTIONS */
 
 section {
     padding: 40px 20px;
     text-align: center;
-    height: 400px;
+    color: black;
 }
 
-.section_background {
-    background-color: #4D9FA0;
+.sectiontemp {
+    height: 800px;
+}
+
+.color1 {
+    background-color: #e5e7eb;
+}
+
+.color2 {
+    background-color: #2A2825 ;
     color: white;
+}
+
+.color3 {
+    background-color: #e5e7eb;
 }
 
 .sectionwithtitle {
@@ -80,29 +109,78 @@ section {
 
 .doublediv {
     display: flex;
+    justify-content: center;
 }
 
 .element {
-    width: 50%;
+    width: 80%;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.contentcenter {
+    justify-content: center;
+}
+
+.imgborder, .imgnoborder {
+    object-fit: cover;
+    margin: 20px;
+    box-shadow: 1px 1px 15px 0 gray;
+    border-radius: 20px;
+    height: 400px;
+
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.imgborder:hover {
+    transform:scale(1.5);
+}
+
+.imgsize {
+    width: 90%;
 }
 
 /* BOUTONS */
 
 .btn {
     display: inline-block;
-    background-color: #F2542D;
-    color: black;
+    background-color: #2A2825;
+    color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
 
+.btncolor {
+    background-color: #e5e7eb;
+    color: black;
+}
+
 .btn:hover {
-    background-color: #F67F62;
+    background-color: #57534d;
+}
+
+.btncolor:hover {
+    background-color: #97989b;
 }
 
 .projets-container {
     max-width: 800px;
     margin: 0 auto;
+}
+
+/* BREACK POINTS */
+@media only screen and (max-width: 900px) {
+    .doublediv {
+        flex-direction: column;
+        align-items: center;
+    }
 }
